@@ -11,11 +11,12 @@ public class PostmanEchoTest {
     void shouldReturnSendData() {
         // Given - When - Then
 // Предусловия
-        String text = "Hello";
+        String text = "Привет";
 
         given()
                 .baseUri("https://postman-echo.com")
-                .body(text) // отправляемые данные (заголовки и query можно выставлять аналогично)
+                .contentType("text/plain; charset=UTF-8")
+                .body("Hi") // отправляемые данные (заголовки и query можно выставлять аналогично)
 // Выполняемые действия
                 .when()
                 .post("/post")
