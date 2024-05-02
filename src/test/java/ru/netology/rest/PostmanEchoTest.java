@@ -16,13 +16,13 @@ public class PostmanEchoTest {
         given()
                 .baseUri("https://postman-echo.com")
                 .contentType("text/plain; charset=UTF-8")
-                .body("Hi") // отправляемые данные (заголовки и query можно выставлять аналогично)
+                .body(text) // отправляемые данные (заголовки и query можно выставлять аналогично)
 // Выполняемые действия
                 .when()
                 .post("/post")
 // Проверки
                 .then()
-                .statusCode(200)
+                .statusCode(300)
                 .body("data", equalTo(text))
         ;
     }
